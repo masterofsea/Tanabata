@@ -6,15 +6,6 @@ It allows thousands of users to interact in a shared digital cosmos through low-
 
 ---
 
-## 🏮 Core Features
-
-* **Real-time Sync**: Sub-millisecond coordinate tracking for massive amounts of entities.
-* **Event-Driven**: All interactions are processed as asynchronous data streams.
-* **Spatial Discovery**: Efficiently finding "nearby" stars in a global coordinate system.
-* **High-Performance UI**: Smooth 2D rendering using Avalonia UI.
-
----
-
 ## 🏗 System Architecture
 
 1.  **Ingress**: gRPC bidirectional streaming for high-frequency updates.
