@@ -17,8 +17,8 @@ It allows thousands of users to interact in a shared digital cosmos through low-
 
 ## 🛠 Tech Stack
 
-* **.NET 8**
-* **gRPC** (Protobuf)
+* **.NET 9**
+* **gRPC**
 * **Redis** (Geospatial)
 * **Message Brokers** (RabbitMQ/Kafka)
 * **Avalonia UI**
