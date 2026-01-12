@@ -1,2 +1,36 @@
-# Tanabata
-The Tanabata Protocol: A high-concurrency, real-time spatial synchronization engine for a shared digital cosmos.
+# 🌌 The Tanabata Protocol
+
+**The Tanabata Protocol** is a high-load real-time engine for spatial synchronization, inspired by the Japanese "Star Festival".
+
+It allows thousands of users to interact in a shared digital cosmos through low-latency streaming and proximity-based events.
+
+---
+
+## 🏮 Core Features
+
+* **Real-time Sync**: Sub-millisecond coordinate tracking for massive amounts of entities.
+* **Event-Driven**: All interactions are processed as asynchronous data streams.
+* **Spatial Discovery**: Efficiently finding "nearby" stars in a global coordinate system.
+* **High-Performance UI**: Smooth 2D rendering using Avalonia UI.
+
+---
+
+## 🏗 System Architecture
+
+1.  **Ingress**: gRPC bidirectional streaming for high-frequency updates.
+2.  **State**: In-memory storage for real-time spatial indexing.
+3.  **Messaging**: Decoupling hot-path logic from background processing.
+4.  **Analytics**: Columnar storage for historical movement analysis.
+
+---
+
+## 🛠 Tech Stack
+
+* **.NET 8**
+* **gRPC** (Protobuf)
+* **Redis** (Geospatial)
+* **Message Brokers** (RabbitMQ/Kafka)
+* **Avalonia UI**
+
+---
+*Created with passion for high-performance systems and Japanese aesthetics.*
