@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Tanabata.Api/Tanabata.Api.csproj" />
+  <Project Path="Tanabata.ConsoleUI/Tanabata.ConsoleUI.csproj" />
+  <Project Path="Tanabata.Domain/Tanabata.Domain.csproj" />
+</Solution>

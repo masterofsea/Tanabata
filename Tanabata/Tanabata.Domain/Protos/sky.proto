@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option csharp_namespace = "Tanabata.Domain.Protos";
+
+package sky;
+
+service SkyService {
+  rpc ConnectSky (stream StarFrame) returns (stream SkySnapshot);
+  rpc GetNearbyPlaces (Coords) returns (PlacesList);
+}
+
+message StarFrame {
+  string star_id = 1;
+  double x = 2;
+  double y = 3;
+}
+
+message SkySnapshot {
+  repeated StarFrame nearby_stars = 1;
+}
+
+message Coords {
+  double lat = 1;
+  double lon = 2;
+}
+
+message Place {
+  string name = 1;
+  double lat = 2;
+  double lon = 3;
+  double distance_meters = 4;
+}
+
+message PlacesList {
+  repeated Place places = 1;
+}

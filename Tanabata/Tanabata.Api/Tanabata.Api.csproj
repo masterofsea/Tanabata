@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.64.0"/>
+        <PackageReference Include="StackExchange.Redis" Version="2.10.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="..\Tanabata.Domain\Protos\sky.proto" GrpcServices="Server" Link="Protos\sky.proto" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Tanabata.Domain\Tanabata.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
