@@ -1,30 +1,34 @@
-## --- IDE Specific (Rider / IntelliJ) ---
-.idea/
-/shelf/
-/workspace.xml
-/projectSettingsUpdater.xml
-/contentModel.xml
-/modules.xml
-/queries/
-/dataSources/
-/dataSources.local.xml
-/httpRequests/
+# Common IntelliJ Platform excludes
 
-## --- .NET Specific ---
-[Bb]in/
-[Ob]j/
-*.user
+# User specific
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/shelf/*
+**/.idea/dictionaries
+**/.idea/httpRequests/
+
+# Sensitive or high-churn files
+**/.idea/**/dataSources/
+**/.idea/**/dataSources.ids
+**/.idea/**/dataSources.xml
+**/.idea/**/dataSources.local.xml
+**/.idea/**/sqlDataSources.xml
+**/.idea/**/dynamic.xml
+
+# Rider
+# Rider auto-generates .iml files, and contentModel.xml
+**/.idea/**/*.iml
+**/.idea/**/contentModel.xml
+**/.idea/**/modules.xml
+
 *.suo
-*.sln.docstates
-# gRPC generated files (обычно создаются в obj, но на всякий случай)
-*.pb.cs
-*.grpc.cs
+*.user
+.vs/
+[Bb]in/
+[Oo]bj/
+_UpgradeReport_Files/
+[Pp]ackages/
 
-## --- Secrets & Environment ---
-.env
-.env.*
-secrets.json
-
-## --- Operating System ---
-.DS_Store
 Thumbs.db
+Desktop.ini
+.DS_Store
