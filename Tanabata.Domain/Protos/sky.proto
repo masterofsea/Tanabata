@@ -7,6 +7,7 @@ package sky;
 service SkyService {
   rpc ConnectSky (stream StarFrame) returns (stream SkySnapshot);
   rpc GetNearbyPlaces (Coords) returns (PlacesList);
+  rpc GetCitySummary (CitySummaryRequest) returns (CitySummaryResponse);
 }
 
 message StarFrame {
@@ -33,4 +34,13 @@ message Place {
 
 message PlacesList {
   repeated Place places = 1;
+}
+
+message CitySummaryRequest {
+  string city_name = 1;
+  string region = 2;
+}
+
+message CitySummaryResponse {
+  string summary = 1;
 }

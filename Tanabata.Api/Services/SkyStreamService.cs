@@ -7,6 +7,7 @@ public class SkyStreamService : SkyService.SkyServiceBase
 {
     private readonly ILogger<SkyStreamService> _logger;
     private readonly ILiveLocationStore _liveLocationStore;
+    private readonly LlamaManager _llama;
 
     public SkyStreamService(
         ILogger<SkyStreamService> logger,
@@ -14,6 +15,7 @@ public class SkyStreamService : SkyService.SkyServiceBase
     {
         _logger = logger;
         _liveLocationStore = liveLocationStore;
+        //_llama = llama;
     }
 
     public override async Task ConnectSky(
@@ -60,4 +62,28 @@ public class SkyStreamService : SkyService.SkyServiceBase
     
         return response;
     }
+
+    public override async Task<CitySummaryResponse> GetCitySummary(CitySummaryRequest request,
+        ServerCallContext context)
+    {
+        //string cacheKey = $"city_summary:{cityName}:{region}";
+
+        // // 1. Пытаемся взять из Redis
+        // var cached = await _redis.StringGetAsync(cacheKey);
+        // if (!cached.IsNull) return cached;
+
+        // 2. Если в кеше нет — генерируем
+        var description =
+            await _llama.GenerateCityDescriptionAsync(request.CityName, request.Region);
+
+        // // 3. Сохраняем в Redis, чтобы не мучить процессор в следующий раз
+        // await _redis.StringSetAsync(cacheKey, description, TimeSpan.FromDays(7));
+
+        return new CitySummaryResponse
+        {
+            Summary = description,
+        };
+    }
+    
+    
 }

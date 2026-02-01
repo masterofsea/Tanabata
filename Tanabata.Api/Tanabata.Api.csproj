@@ -8,6 +8,8 @@
 
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.64.0"/>
+        <PackageReference Include="LLamaSharp" Version="0.25.0" />
+        <PackageReference Include="LLamaSharp.Backend.Cuda12" Version="0.25.0" />
         <PackageReference Include="StackExchange.Redis" Version="2.10.1" />
     </ItemGroup>
 
@@ -17,6 +19,16 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Tanabata.Domain\Tanabata.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Models\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Models\Phi-3-mini-4k-instruct-q4.gguf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
